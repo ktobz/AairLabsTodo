@@ -44,13 +44,23 @@ Scan the QR code with Expo Go (iOS/Android) or press `a` for Android emulator / 
 
 ## Screenshots
 
-| Screen | Description |
-|--------|-------------|
-| ![Empty Task List](./screenshots/tasklist-empty.png) | Task List — empty state |
-| ![Task List with Tasks](./screenshots/tasklist-with-tasks.png) | Task List — with completed/incomplete tasks |
-| ![Add Task](./screenshots/add-task.png) | Add Task screen |
-| ![Voice Input](./screenshots/voice-input.png) | Voice Input FAB active / listening |
-| ![Voice Result](./screenshots/voice-result.png) | Tasks produced from voice input |
+![Screenshot 1](./screenshots/Screenshot%202026-07-23%20062436.png)
+
+![Screenshot 2](./screenshots/Screenshot%202026-07-23%20062447.png)
+
+![Screenshot 3](./screenshots/Screenshot%202026-07-23%20062506.png)
+
+![Screenshot 4](./screenshots/Screenshot%202026-07-23%20062518.png)
+
+![Screenshot 5](./screenshots/Screenshot%202026-07-23%20062826.png)
+
+![Screenshot 6](./screenshots/Screenshot%202026-07-23%20062837.png)
+
+![Screenshot 7](./screenshots/Screenshot%202026-07-23%20062912.png)
+
+![Screenshot 8](./screenshots/Screenshot%202026-07-23%20063130.png)
+
+![Screenshot 9](./screenshots/Screenshot%202026-07-23%20063218.png)
 
 ## Project Structure
 
