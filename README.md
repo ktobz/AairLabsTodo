@@ -10,6 +10,11 @@ A React Native (Expo) To-Do List app built for the AAIR LABS developer exercise.
 - **Smart Task Splitting** — Natural language phrases like "Buy groceries and call mom" are split into separate tasks
 - **Two Screens** — Task List and Add Task, with React Navigation
 - **Edge Case Handling** — Empty title validation, empty state display, delete confirmation
+- **Dark/Light Theme** — Toggle between dark and light mode, persisted locally
+- **Due Dates** — Assign due dates (Today, Tomorrow, Next Week) with overdue indicators
+- **Search & Filter** — Real-time search and All/Active/Completed filter chips
+- **Sort** — Sort tasks by creation date or due date
+- **TypeScript** — Fully typed codebase
 
 ## Tech Stack
 
@@ -17,7 +22,7 @@ A React Native (Expo) To-Do List app built for the AAIR LABS developer exercise.
 - TypeScript
 - React Navigation (native stack)
 - AsyncStorage
-- Web Speech Recognition API (free, device-level STT)
+- expo-speech-recognition (free, device-level STT)
 
 ## Getting Started
 
@@ -44,32 +49,26 @@ Scan the QR code with Expo Go (iOS/Android) or press `a` for Android emulator / 
 
 ## Screenshots
 
-![Screenshot 1](./screenshots/Screenshot%202026-07-23%20062436.png)
+![Task List Screen — Dark and Light theme with search bar](./screenshots/dark%20screen%20and%20light%20screen%20with%20a%20search%20bar.jpg)
 
-![Screenshot 2](./screenshots/Screenshot%202026-07-23%20062447.png)
+![Task Screen — Empty state](./screenshots/task%20screen%20with%20an%20empty%20state.png)
 
-![Screenshot 3](./screenshots/Screenshot%202026-07-23%20062506.png)
+![Task List — with completed and uncompleted tasks](./screenshots/task%20list%20with%20completed%20and%20uncompleted%20task.png)
 
-![Screenshot 4](./screenshots/Screenshot%202026-07-23%20062518.png)
+![Task Screen](./screenshots/task%20screen.jpg)
 
-![Screenshot 5](./screenshots/Screenshot%202026-07-23%20062826.png)
+![Voice Input — FAB active / listening](./screenshots/voice%20input.png)
 
-![Screenshot 6](./screenshots/Screenshot%202026-07-23%20062837.png)
-
-![Screenshot 7](./screenshots/Screenshot%202026-07-23%20062912.png)
-
-![Screenshot 8](./screenshots/Screenshot%202026-07-23%20063130.png)
-
-![Screenshot 9](./screenshots/Screenshot%202026-07-23%20063218.png)
+![Voice Input — with tasks produced](./screenshots/voice%20input%20with%20task.png)
 
 ## Project Structure
 
 ```
 src/
   components/    — Reusable UI components
-  context/       — React Context for task state
+  context/       — React Context for task state and theme
   hooks/         — Custom hooks (useTasks, useVoiceInput)
   screens/       — Screen-level components
   types/         — TypeScript interfaces
-  utils/         — Helpers (storage, task splitting)
+  utils/         — Helpers (storage, theme, task splitting)
 ```
