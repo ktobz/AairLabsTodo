@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Task } from "../types";
 import { saveTasks, loadTasks } from "../utils/storage";
 
@@ -20,14 +19,14 @@ export const useTasks = () => {
   }, []);
 
   const addTask = useCallback(
-    async (title: string, description: string) => {
+    async (title: string, description: string, dueDate: number | null = null) => {
       const newTask: Task = {
         id: Date.now().toString(),
         title: title.trim(),
         description: description.trim(),
         completed: false,
         createdAt: Date.now(),
-        dueDate: null,
+        dueDate,
       };
       await persistAndSet([...tasks, newTask]);
     },
@@ -52,5 +51,15 @@ export const useTasks = () => {
     [tasks, persistAndSet]
   );
 
-  return { tasks, loading, addTask, toggleTask, deleteTask };
+  const updateTaskDate = useCallback(
+    async (id: string, dueDate: number | null) => {
+      const updated = tasks.map((t) =>
+        t.id === id ? { ...t, dueDate } : t
+      );
+      await persistAndSet(updated);
+    },
+    [tasks, persistAndSet]
+  );
+
+  return { tasks, loading, addTask, toggleTask, deleteTask, updateTaskDate };
 };

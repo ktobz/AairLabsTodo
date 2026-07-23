@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
 import { Task } from "../types";
 import TaskItem from "./TaskItem";
 
@@ -8,6 +8,7 @@ interface TaskListProps {
   onToggle: (id: string) => void;
   onDelete: (id: string) => void;
   ListEmptyComponent: React.ReactElement;
+  sortBy: "created" | "dueDate";
 }
 
 const TaskList = ({
@@ -15,9 +16,16 @@ const TaskList = ({
   onToggle,
   onDelete,
   ListEmptyComponent,
+  sortBy,
 }: TaskListProps) => {
   const sortedTasks = [...tasks].sort((a, b) => {
     if (a.completed !== b.completed) return a.completed ? 1 : -1;
+    if (sortBy === "dueDate") {
+      if (!a.dueDate && !b.dueDate) return b.createdAt - a.createdAt;
+      if (!a.dueDate) return 1;
+      if (!b.dueDate) return -1;
+      return a.dueDate - b.dueDate;
+    }
     return b.createdAt - a.createdAt;
   });
 
@@ -38,6 +46,7 @@ const TaskList = ({
 const styles = StyleSheet.create({
   list: {
     paddingVertical: 8,
+    paddingBottom: 100,
   },
   emptyList: {
     flex: 1,
