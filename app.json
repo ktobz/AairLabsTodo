@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "AairLabsTodo",
+    "slug": "AairLabsTodo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSSpeechRecognitionUsageDescription": "Allow AairLabsTodo to use speech recognition for voice input.",
+        "NSMicrophoneUsageDescription": "Allow AairLabsTodo to use the microphone for voice input."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.ktobz.AairLabsTodo"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "Allow AairLabsTodo to use the microphone for voice input.",
+          "speechRecognitionPermission": "Allow AairLabsTodo to use speech recognition for voice input."
+        }
+      ]
+    ]
+  }
+}
